@@ -27,4 +27,5 @@ Start the server along with the front end:
 $ yarn start
 ```
 If you've done everything correctly, you should see this:
+
 <img src="https://github.com/nguyendviet/go-poopie/blob/master/client/src/github-photos/poopie1.png" width="400"/>
