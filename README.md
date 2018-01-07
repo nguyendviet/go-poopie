@@ -18,7 +18,7 @@ Install dependencies for the client:
 ```
 $ yarn install
 ```
-Then go back out the root folder:
+Then go back to the root folder:
 ```
 $ cd ..
 ```
