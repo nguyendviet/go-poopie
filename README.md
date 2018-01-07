@@ -22,7 +22,7 @@ Then go back out the root folder:
 ```
 $ cd ..
 ```
-Start the server along with the front end:
+Start express and react at the same time:
 ```
 $ yarn start
 ```
