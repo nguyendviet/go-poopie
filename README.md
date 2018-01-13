@@ -26,6 +26,6 @@ Start express and react at the same time:
 ```
 $ yarn start
 ```
-If you've done everything correctly, you should see this:
+If you've done everything correctly, you should see something like this:
 
 <img src="https://github.com/nguyendviet/go-poopie/blob/master/client/src/github-photos/poopie1.png" width="400"/>
