@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React, {Component} from 'react';
+import BigButton from '../../components/BigButton';
 
 class Home extends Component {
     state = {
@@ -6,7 +7,7 @@ class Home extends Component {
 
     render() {
         return (
-            <p>This is the home page with THE BIG RED BUTTON!</p>
+            <BigButton/>
         )
     }
 }
