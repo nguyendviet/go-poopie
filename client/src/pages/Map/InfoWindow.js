@@ -1,0 +1,72 @@
+import {
+  withGoogleMap,
+  GoogleMap,
+  InfoWindow,
+  Marker,
+} from "google-maps-react";
+
+import ReactDOMServer from 'react-dom/server';
+
+export class InfoWindow extends React.Component{
+  componentDidUpdate(prevProps, prevState) {
+    if(this.props.map !== prevProps.map){
+      this.renderInfoWindow();
+    }
+
+    if (this.props.children !== prevProps.children){
+      this.updateContent();
+    }
+
+    if ((this.props.visible !== prevProps.visible) ||
+        (this.props.marker !== prevProps.marker)){
+      this.props.visible ?
+        this.openWindow() :
+        this.closeWindow();
+    }
+  }
+
+  openWindow(){
+    this.InfoWindow
+      .open(this.props.map, this.props.marker);
+  }
+
+  closeWindow(){
+    this.infowindow.close();
+  }
+
+  updateContent(){
+    const content = this.renderChildren();
+    this.InfoWindow
+      .setContent(content);
+  }
+
+  renderChildren(){
+    const {children} = this.props;
+    retrun ReactDOMServer.renderToString(children);
+  }
+
+  renderInfoWindow(){
+    let {map, google, mapCenter} = this.props;
+
+    const iw = this.infowindow = new google.maps.InfoWindow({
+      content: ''
+    });
+
+    google.maps.event
+      .addListener(iw, 'closeclick', this.onClose.bind(this));
+    google.maps.event
+      .addListener(iw, 'domready', this.onOpen.bind(this));
+  }
+
+  onOpen(){
+    if (this.props.onOpen) this.props.onOpen();
+  }
+
+  onClose(){
+    if(this.props.onClose) this.props.onClose();
+  }
+
+  render(){
+    return null;
+  }
+}
