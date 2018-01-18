@@ -7,3 +7,12 @@ dark yellow : #EF9B0F
 red : #BD150E
 brown: #8C6239
 text color: #563B1B
+
+
+Font from Google Fonts - PT Sans Narrow (regular, bold)
+
+Link
+<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700" rel="stylesheet">
+
+css rule declaration
+font-family: 'PT Sans Narrow', sans-serif;
