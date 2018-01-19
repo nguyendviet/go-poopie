@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Alert from '../../components/Alert';
 import BigButton from '../../components/BigButton';
 
 class Home extends Component {
@@ -7,7 +8,12 @@ class Home extends Component {
 
     render() {
         return (
-            <BigButton/>
+            <div>
+                <Alert>
+                    <p>Notification for Home Page. Something like: Go Poopie. Find nearby bathrooms! Click Big Button to Go!</p>
+                </Alert>
+                <BigButton/>
+            </div>
         )
     }
 }
