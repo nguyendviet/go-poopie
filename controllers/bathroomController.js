@@ -5,6 +5,6 @@ const db = require('../models');
 module.exports = {
     findAll: (req, res) => {
         // find all the bathrooms either from an API or Mongo
-        res.send({message: 'need to work on this'})
+        res.send({message: 'find all bathrooms: need to work on this'})
     }
 };

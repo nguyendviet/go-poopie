@@ -11,16 +11,6 @@ class GMap extends Component {
         }
     }
 
-    getLocations = () => {
-        API.getLocations()
-            .then(res => {
-                console.log(res.data);
-                
-                }
-            )
-            .catch(err => console.log(err));
-    };
-
     componentDidMount() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition((position) => {
