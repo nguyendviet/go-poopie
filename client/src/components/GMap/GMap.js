@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MyMapComponent from './MyMap';
+import API from "../../utils/API";
 
 class GMap extends Component {
     state = {
@@ -9,6 +10,16 @@ class GMap extends Component {
             lng: 0
         }
     }
+
+    getLocations = () => {
+        API.getLocations()
+            .then(res => {
+                console.log(res.data);
+                
+                }
+            )
+            .catch(err => console.log(err));
+    };
 
     componentDidMount() {
         if (navigator.geolocation) {
