@@ -5,5 +5,6 @@ const bathroomController = require('../../controllers/bathroomController');
 router
 .route('/')
 .get(bathroomController.findAll)
+.post(bathroomController.create);
 
 module.exports = router;

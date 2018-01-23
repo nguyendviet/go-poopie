@@ -6,5 +6,17 @@ module.exports = {
     findAll: (req, res) => {
         // find all the bathrooms either from an API or Mongo
         res.send({message: 'find all bathrooms: need to work on this'})
+    },
+    create: (req, res) => {
+        const bathroom = {
+            _id: req.body.id,
+            name: req.body.name,
+            location: req.body.location
+        };
+
+        db.Bathroom
+        .create(bathroom)
+        .then(dbBathroom => res.json(dbBathroom))
+        .catch(err => res.status(422).json(err));
     }
 };

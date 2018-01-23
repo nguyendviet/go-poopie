@@ -4,10 +4,16 @@ import GMap from '../../components/GMap';
 import API from '../../utils/API';
 
 class Map extends Component {
-    state = {
-    };
+    constructor(props) {
+        super(props);
 
-    getBathrooms = () => {
+        this.getBathrooms = this.getBathrooms.bind(this);
+        this.state = {
+        
+        };
+    }
+
+    getBathrooms() {
         API
         .getBathrooms()
         .then(res => {
@@ -18,6 +24,10 @@ class Map extends Component {
         .catch(err => console.log(err));
     };
 
+    componentDidMount() {
+        this.getBathrooms()
+    }
+
     render() {
         return (
             <div>
@@ -25,7 +35,6 @@ class Map extends Component {
                     <p>Notification for Map Page: Locations of all nearby bathrooms:</p>
                 </Alert>
                 <p>This is where we show the map.</p>
-                <button onClick={() => this.getBathrooms()}>Get Bathrooms</button>
                 <GMap/>
             </div>
         )

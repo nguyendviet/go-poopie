@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import "../SignUp/signup.css";
+import React, {Component} from 'react';
+import './signup.css';
+
 class SignUp extends Component {
     // Setting the component's initial state
     state = {
@@ -46,33 +47,33 @@ class SignUp extends Component {
     render() {
       // Notice how each input has a `value`, `name`, and `onChange` prop
       return (
-        <div class = "container">
+        <div>
           <p id = "intro">
             Sign up for My-Poopie! {this.state.firstName} {this.state.lastName}
           </p>
           <form className="form">
-            <input class = "content"
+            <input className = "content"
               value={this.state.firstName}
               name="firstName"
               onChange={this.handleInputChange}
               type="text"
               placeholder="First Name"
             />
-            <input class = "content"
+            <input className = "content"
               value={this.state.lastName}
               name="lastName"
               onChange={this.handleInputChange}
               type="text"
               placeholder="Last Name"
             />
-            <input class = "content"
+            <input className = "content"
               value={this.state.password}
               name="password"
               onChange={this.handleInputChange}
               type="password"
               placeholder="Password" 
             />
-            <button class = "button" onClick={this.handleFormSubmit}>SignUp</button>
+            <button className = "button" onClick={this.handleFormSubmit}>SignUp</button>
           </form>
         </div>
   );

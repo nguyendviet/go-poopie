@@ -2,7 +2,11 @@ import axios from 'axios';
 
 export default {
     // Gets all bathrooms
-    getBathrooms: function(params) {
+    getBathrooms: params => {
         return axios.get('/api/bathrooms');
+    },
+
+    saveBathroom: bathroomData => {
+        return axios.post('/api/bathrooms', bathroomData);
     }
 };

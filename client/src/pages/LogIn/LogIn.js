@@ -31,19 +31,19 @@ class LogIn extends Component {
       render() {
         // Notice how each input has a `value`, `name`, and `onChange` prop
         return (
-           <div class = "container">
+           <div>
             <p>
             Enter Your Name and Password to Login {this.state.firstName} {this.state.lastName}
             </p>
             <form className="form">
-              <input class = "content"
+              <input className = "content"
                 value={this.state.firstName}
                 name="firstName"
                 onChange={this.handleInputChange}
                 type="text"
                 placeholder="First Name"
               />
-              <input class = "content"
+              <input className = "content"
                 value={this.state.lastName}
                 name="lastName"
                 onChange={this.handleInputChange}
@@ -51,7 +51,7 @@ class LogIn extends Component {
                 placeholder="Last Name"
               />
 
-              <input class = "content"
+              <input className = "content"
                 value={this.state.passWord}
                 name="passWord"
                 onChange={this.handleInputChange}

@@ -2,19 +2,19 @@ const db = require('../models');
 
 // Defining methods for the userController
 module.exports = {
-    findAll: function(req, res) {
+    findAll: (req, res) => {
         res.send({message: 'need to work on this'})
     },
-    findById: function(req, res) {
+    findById: (req, res) => {
         res.send({message: 'need to work on this'})
     },
-    create: function(req, res) {
+    create: (req, res) => {
         res.send({message: 'need to work on this'})
     },
-    update: function(req, res) {
+    update: (req, res) => {
         res.send({message: 'need to work on this'})
     },
-    remove: function(req, res) {
+    remove: (req, res) => {
         res.send({message: 'need to work on this'})
     }
 };
