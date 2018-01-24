@@ -31,19 +31,19 @@ class LogIn extends Component {
       render() {
         // Notice how each input has a `value`, `name`, and `onChange` prop
         return (
-           <div>
+           <div className = "formcontainer">
             <p>
             Enter Your Name and Password to Login {this.state.firstName} {this.state.lastName}
             </p>
             <form className="form">
-              <input className = "content"
+              <input className = "form-control"
                 value={this.state.firstName}
                 name="firstName"
                 onChange={this.handleInputChange}
                 type="text"
                 placeholder="First Name"
               />
-              <input className = "content"
+               <input className = "form-control"
                 value={this.state.lastName}
                 name="lastName"
                 onChange={this.handleInputChange}
@@ -51,14 +51,14 @@ class LogIn extends Component {
                 placeholder="Last Name"
               />
 
-              <input className = "content"
+              <input className = "form-control"
                 value={this.state.passWord}
                 name="passWord"
                 onChange={this.handleInputChange}
                 type="text"
                 placeholder="Password"
               />
-              <button onClick={this.handleFormSubmit}>Login</button>
+              <button className = "btn-primary" onClick={this.handleFormSubmit}>Login</button>
             </form>
           </div>
         );
