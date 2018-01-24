@@ -1,10 +1,32 @@
 import React, {Component} from 'react';
 import Alert from '../../components/Alert';
 import GMap from '../../components/GMap';
+import API from '../../utils/API';
 
 class Map extends Component {
-    state = {
+    constructor(props) {
+        super(props);
+
+        this.getBathrooms = this.getBathrooms.bind(this);
+        this.state = {
+        
+        };
+    }
+
+    getBathrooms() {
+        API
+        .getBathrooms()
+        .then(res => {
+                console.log(`result from get bathrooms request:`);
+                console.log(res);
+            }
+        )
+        .catch(err => console.log(err));
     };
+
+    componentDidMount() {
+        this.getBathrooms()
+    }
 
     render() {
         return (

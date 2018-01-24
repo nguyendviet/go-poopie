@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MyMapComponent from './MyMap';
+import API from "../../utils/API";
 
 class GMap extends Component {
     state = {
