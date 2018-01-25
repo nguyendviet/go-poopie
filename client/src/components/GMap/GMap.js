@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import MyMapComponent from './MyMap';
 import API from "../../utils/API";
 

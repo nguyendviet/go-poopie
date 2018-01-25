@@ -4,8 +4,10 @@ const db = require('../models');
 // findAll searches for all nearby bathrooms
 module.exports = {
     findAll: (req, res) => {
-        // find all the bathrooms either from an API or Mongo
-        res.send({message: 'find all bathrooms: need to work on this'})
+        db.Bathroom
+        .find(req.query)
+        .then(dbBathroom => res.json(dbBathroom))
+        .catch(err => res.status(422).json(err));
     },
     create: (req, res) => {
         const bathroom = {

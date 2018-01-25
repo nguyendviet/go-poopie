@@ -45,7 +45,8 @@ class Map extends Component {
         API
         .getBathrooms()
         .then(res => {
-                console.log(res);
+                console.log('data got back from database');
+                console.log(res.data);
             }
         )
         .catch(err => console.log(err));
