@@ -25,12 +25,8 @@ class Map extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        console.log(`send bathroom info to database`);
-        console.log(this.state);
-        console.log(typeof(this.state.lat)); // a string
 
         const bathroom = {
-            id: this.state.lat,
             name: this.state.name,
             location: {
                 coordinates: {
@@ -40,19 +36,15 @@ class Map extends Component {
             }
         };
 
-        console.log(`bathroom info sent to server`);
-        console.log(bathroom);
-
         API
         .saveBathroom(bathroom)
-        .then(res => console.log(res));
+        .then(res => console.log(res.data));
     };
 
     getBathrooms() {
         API
         .getBathrooms()
         .then(res => {
-                console.log(`result from get bathrooms request:`);
                 console.log(res);
             }
         )

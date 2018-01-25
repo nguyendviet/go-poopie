@@ -19,6 +19,7 @@ class GMap extends Component {
                     lng: position.coords.longitude
                 };
 
+                console.log(`location of user return from the browser:`);
                 console.log(pos);
                 this.setState({pos});
             });

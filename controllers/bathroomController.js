@@ -9,7 +9,6 @@ module.exports = {
     },
     create: (req, res) => {
         const bathroom = {
-            _id: req.body.id,
             name: req.body.name,
             location: req.body.location
         };
