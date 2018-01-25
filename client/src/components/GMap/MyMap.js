@@ -1,7 +1,8 @@
-import React from 'react';
-import { compose, withProps } from "recompose"
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+import React from 'react'
+import {compose, withProps} from 'recompose'
+import {withScriptjs, withGoogleMap, GoogleMap, Marker} from 'react-google-maps'
 
+// set up google map
 const MyMap = compose(
     withProps({
         googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyAQRPht-fE8RI3ZmfR6ckJ9rwW8WRPok8I&v=3.exp&libraries=geometry,drawing,places",
@@ -17,8 +18,14 @@ const MyMap = compose(
         defaultCenter={props.pos}
     >
         {props.isMarkerShown && <Marker position={props.pos} onClick={props.onMarkerClick} />}
-        {props.locations.map(location => <Marker key={location.id} position={location.pos} onClick={props.onMarkerClick} />)}
+        {props.bathrooms.map(bathroom => 
+            <Marker 
+                key={bathroom._id} 
+                position={bathroom.location.coordinates} 
+                onClick={props.onMarkerClick} 
+            />
+        )}
     </GoogleMap>
-);
+)
 
 export default MyMap;

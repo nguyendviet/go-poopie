@@ -1,41 +1,22 @@
-import React, {Component} from 'react';
-import MyMapComponent from './MyMap';
-import API from "../../utils/API";
+import React, {Component} from 'react'
+import MyMapComponent from './MyMap'
 
 class GMap extends Component {
-    state = {
-        isMarkerShown: true,
-        pos: {
-            lat: 0,
-            lng: 0
-        },
-        locations: [
-            // isMarkerShown: true,
-            {
-                id: '1',
-                pos: {
-                    lat: 38.9853536,
-                    lng: -77.1078233
-                }
-            },
-            {
-                id: '2',
-                pos: {
-                    lat: 38.8853536,
-                    lng: -77.2079234
-                }
-            },
-            {
-                id: '3',
-                pos: {
-                    lat: 38.8863536,
-                    lng: -77.307823
-                }
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            isMarkerShown: true,
+            pos: {
+                lat: 0,
+                lng: 0
             }
-        ]
+        }
     }
 
     componentDidMount() {
+        // get geo coordinates from the browser
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition((position) => {
                 const pos = {
@@ -43,13 +24,14 @@ class GMap extends Component {
                     lng: position.coords.longitude
                 };
 
-                console.log(`location of user return from the browser:`);
+                console.log(`location of user:`);
                 console.log(pos);
                 this.setState({pos});
             });
         }
     }
 
+    // handle click on marker
     handleMarkerClick = () => {
         console.log(`marker clicked!`);
     }
@@ -59,7 +41,7 @@ class GMap extends Component {
             return (
                 <MyMapComponent
                     pos={this.state.pos}
-                    locations={this.state.locations}
+                    bathrooms={this.props.bathrooms}
                     isMarkerShown={this.state.isMarkerShown}
                     onMarkerClick={this.handleMarkerClick}
                 />
