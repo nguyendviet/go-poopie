@@ -8,7 +8,31 @@ class GMap extends Component {
         pos: {
             lat: 0,
             lng: 0
-        }
+        },
+        locations: [
+            // isMarkerShown: true,
+            {
+                id: '1',
+                pos: {
+                    lat: 38.9853536,
+                    lng: -77.1078233
+                }
+            },
+            {
+                id: '2',
+                pos: {
+                    lat: 38.8853536,
+                    lng: -77.2079234
+                }
+            },
+            {
+                id: '3',
+                pos: {
+                    lat: 38.8863536,
+                    lng: -77.307823
+                }
+            }
+        ]
     }
 
     componentDidMount() {
@@ -35,6 +59,7 @@ class GMap extends Component {
             return (
                 <MyMapComponent
                     pos={this.state.pos}
+                    locations={this.state.locations}
                     isMarkerShown={this.state.isMarkerShown}
                     onMarkerClick={this.handleMarkerClick}
                 />
