@@ -11,6 +11,7 @@ class GMap extends Component {
         this.state = {
             isMarkerShown: true,
             isOpen: false,
+            thisId: '',
             pos: {
                 lat: 0,
                 lng: 0
@@ -39,7 +40,8 @@ class GMap extends Component {
         console.log(`marker clicked!`);
     }
 
-    onToggleOpen = () => {
+    onToggleOpen = id => {
+        console.log(JSON.stringify(id));
         console.log('marker clicked');
         this.setState({
             isOpen: !this.state.isOpen

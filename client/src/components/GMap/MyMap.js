@@ -22,13 +22,14 @@ const MyMap = compose(
         {props.isMarkerShown && <Marker position={props.pos} onClick={props.onToggleOpen} />}
         {props.bathrooms.map(bathroom => 
             <Marker 
+                id={bathroom._id}
                 key={bathroom._id} 
                 position={bathroom.location.coordinates} 
                 // onClick={props.onMarkerClick}
                 onClick={props.onToggleOpen}
                 icon={bathroom_icon}
             >
-                {props.isOpen && <InfoWindow onCloseClick={props.onToggleOpen}>
+                {props.isOpen && <InfoWindow>
                     <div>
                     <p>Id: {bathroom._id}</p>
                     <p>Direction: {bathroom.name}</p>
