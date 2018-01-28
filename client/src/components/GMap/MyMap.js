@@ -1,6 +1,6 @@
 import React from 'react'
-import {compose, withProps} from 'recompose'
-import {withScriptjs, withGoogleMap, GoogleMap, Marker} from 'react-google-maps'
+import {compose, withProps, withStateHandlers} from 'recompose'
+import {withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow} from 'react-google-maps'
 import bathroom_icon from '../../images/toilet.png'
 
 // set up google map
@@ -18,14 +18,20 @@ const MyMap = compose(
         defaultZoom={15}
         defaultCenter={props.pos}
     >
-        {props.isMarkerShown && <Marker position={props.pos} onClick={props.onMarkerClick} />}
+        {/* {props.isMarkerShown && <Marker position={props.pos} onClick={props.onMarkerClick} />} */}
+        {props.isMarkerShown && <Marker position={props.pos} onClick={props.onToggleOpen} />}
         {props.bathrooms.map(bathroom => 
             <Marker 
                 key={bathroom._id} 
                 position={bathroom.location.coordinates} 
-                onClick={props.onMarkerClick}
+                // onClick={props.onMarkerClick}
+                onClick={props.onToggleOpen}
                 icon={bathroom_icon}
-            />
+            >
+                {props.isOpen && <InfoWindow onCloseClick={props.onToggleOpen}>
+                    <p>Direction: {bathroom.name}</p>
+                </InfoWindow>}
+            </Marker>
         )}
     </GoogleMap>
 )

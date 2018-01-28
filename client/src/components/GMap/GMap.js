@@ -6,8 +6,11 @@ class GMap extends Component {
     constructor(props) {
         super(props);
 
+        this.onToggleOpen = this.onToggleOpen.bind(this);
+
         this.state = {
             isMarkerShown: true,
+            isOpen: false,
             pos: {
                 lat: 0,
                 lng: 0
@@ -36,6 +39,13 @@ class GMap extends Component {
         console.log(`marker clicked!`);
     }
 
+    onToggleOpen = ({isOpen}) => {
+        console.log('marker clicked');
+        this.setState({
+            isOpen: !this.state.isOpen
+        })
+    }
+
     render() {
         if ((this.state.pos.lat !== 0) && (this.state.pos.lng !== 0)) {
             return (
@@ -43,7 +53,9 @@ class GMap extends Component {
                     pos={this.state.pos}
                     bathrooms={this.props.bathrooms}
                     isMarkerShown={this.state.isMarkerShown}
-                    onMarkerClick={this.handleMarkerClick}
+                    // onMarkerClick={this.handleMarkerClick}
+                    onToggleOpen={this.onToggleOpen}
+                    isOpen={this.state.isOpen}
                 />
             )
         }
