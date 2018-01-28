@@ -39,7 +39,7 @@ class GMap extends Component {
         console.log(`marker clicked!`);
     }
 
-    onToggleOpen = ({isOpen}) => {
+    onToggleOpen = () => {
         console.log('marker clicked');
         this.setState({
             isOpen: !this.state.isOpen

@@ -29,7 +29,10 @@ const MyMap = compose(
                 icon={bathroom_icon}
             >
                 {props.isOpen && <InfoWindow onCloseClick={props.onToggleOpen}>
+                    <div>
+                    <p>Id: {bathroom._id}</p>
                     <p>Direction: {bathroom.name}</p>
+                    </div>
                 </InfoWindow>}
             </Marker>
         )}
