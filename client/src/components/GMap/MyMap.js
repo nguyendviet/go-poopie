@@ -1,5 +1,5 @@
 import React from 'react'
-import {compose, withProps, withStateHandlers} from 'recompose'
+import {compose, withProps} from 'recompose'
 import {withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow} from 'react-google-maps'
 import bathroom_icon from '../../images/toilet.png'
 
@@ -18,7 +18,13 @@ const MyMap = compose(
         defaultZoom={15}
         defaultCenter={props.pos}
     >
-        {props.isMarkerShown && <Marker position={props.pos} onClick={props.handleMarkerClick} />}
+        {/* show user location marker */}
+        {props.isMarkerShown && <Marker 
+            position={props.pos} 
+            onClick={props.handleMarkerClick}/>
+        }
+
+        {/* show bathroom markers */}
         {props.bathrooms.map(bathroom => 
             <Marker 
                 id={bathroom._id}
@@ -32,7 +38,8 @@ const MyMap = compose(
                         <p>Id: {bathroom._id}</p>
                         <p>Direction: {bathroom.name}</p>
                     </div>
-                </InfoWindow>}
+                </InfoWindow>
+            }
             </Marker>
         )}
     </GoogleMap>

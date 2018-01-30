@@ -10,7 +10,6 @@ class GMap extends Component {
 
         this.state = {
             isMarkerShown: true,
-            isOpen: false,
             thisId: '',
             pos: {
                 lat: 0,
@@ -40,7 +39,6 @@ class GMap extends Component {
         console.log(`marker clicked!`);
         console.log(id);
         this.setState({
-            isOpen: !this.state.isOpen,
             thisId: id
         })
     }
@@ -53,7 +51,6 @@ class GMap extends Component {
                     bathrooms={this.props.bathrooms}
                     isMarkerShown={this.state.isMarkerShown}
                     handleMarkerClick={this.handleMarkerClick}
-                    isOpen={this.state.isOpen}
                     thisId={this.state.thisId}
                 />
             )
