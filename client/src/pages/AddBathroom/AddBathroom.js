@@ -9,13 +9,31 @@ class AddBathroom extends Component {
 
         this.state = {
             name: '',
+            coords: false,
             lat: 0,
             lng: 0
         };
     }
 
+    componentDidMount() {
+        // get geo coordinates from the browser
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((position) => {
+                this.setState({
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                });
+            });
+        }
+    }
+
+    toggleCoords = () => {
+        this.setState({coords: !this.state.coords});
+    }
+
     handleInputChange = event => {
         const {name, value} = event.target;
+
         this.setState({
             [name]: value
         });
@@ -43,15 +61,13 @@ class AddBathroom extends Component {
         return (
             <div>
                 <Alert>
-                    <p>Notification for Map Page: Locations of all nearby bathrooms:</p>
+                    <p>Add a bathroom</p>
                 </Alert>
-                <p>This is where we show the form to add new bathroom location.</p>
+                <button onClick={this.toggleCoords.bind(this)}>Toggle Methods</button>
                 <Form
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
-                    name={this.state.name}
-                    lat={this.state.lat}
-                    lng={this.state.lng}
+                    coords={this.state.coords}
                 />
             </div>
         )
