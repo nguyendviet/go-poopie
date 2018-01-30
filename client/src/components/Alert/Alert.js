@@ -2,7 +2,7 @@ import React from 'react';
 import './Alert.css'
 
 const Alert = props =>
-    <div className="alert alert-info" role="alert">
+    <div className="alert alert-info mt-3" role="alert">
         {props.children}
     </div>
 ;
