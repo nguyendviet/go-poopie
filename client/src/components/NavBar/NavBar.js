@@ -5,6 +5,7 @@ import './NavBar.css'
 const NavBar = props => {
     return (
         <ul className="nav">
+            <li><img></img></li>
             <li className="nav-item">
                 <Link to="/" className="nav-link">Home</Link>
             </li>

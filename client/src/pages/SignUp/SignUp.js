@@ -8,7 +8,7 @@ class SignUp extends Component {
         name: "",
         email: "",
         password: "",
-        alert: "Sign up to add more bathrooms!",
+        alert: "Let us know who you are!",
         alertType: ""
     };
   
@@ -59,34 +59,42 @@ class SignUp extends Component {
     render() {
         return (
             <div>
-                <Alert type={this.state.alertType}>
-                    {this.state.alert}
-                </Alert>
-                <div className = "formcontainer">
-                    <form className="form">
-                    <input className = "form-control"
-                        value={this.state.name}
-                        name="name"
-                        onChange={this.handleInputChange}
-                        type="text"
-                        placeholder="Name"
-                    />
-                        <input className = "form-control"
-                        value={this.state.email}
-                        name="email"
-                        onChange={this.handleInputChange}
-                        type="email"
-                        placeholder="Email"
-                    />
-                    <input className = "form-control"
-                        value={this.state.password}
-                        name="password"
-                        onChange={this.handleInputChange}
-                        type="password"
-                        placeholder="Password" 
-                    />
-                    <button className = "btn-primary"  onClick={this.handleFormSubmit}>SignUp</button>
-                    </form>
+                <div className = "container-fluid">
+                    <div className="row">
+                        <Alert type={this.state.alertType} custom="display-4 text-center col-sm-12 mt-3 bold">
+                            {this.state.alert}
+                        </Alert>
+                        <div className = "col-sm-12">
+                            <form className="form">
+                                <input className = "form-control-lg mb-2"
+                                    value={this.state.name}
+                                    name="name"
+                                    onChange={this.handleInputChange}
+                                    type="text"
+                                    placeholder="Name"
+                                />
+                                    <input className = "form-control-lg mb-2"
+                                    value={this.state.email}
+                                    name="email"
+                                    onChange={this.handleInputChange}
+                                    type="email"
+                                    placeholder="Email"
+                                />
+                                <input className = "form-control-lg mb-2"
+                                    value={this.state.password}
+                                    name="password"
+                                    onChange={this.handleInputChange}
+                                    type="password"
+                                    placeholder="Password" 
+                                />
+                                <button 
+                                    className = "btn btn-primary btn-block btn-lg mt-3"
+                                    onClick={this.handleFormSubmit}
+                                >SignUp
+                                </button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         );

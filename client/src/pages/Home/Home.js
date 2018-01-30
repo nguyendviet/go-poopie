@@ -8,9 +8,9 @@ class Home extends Component {
 
     render() {
         return (
-            <div>
+            <div className = "col-sm-12">
                 <Alert>
-                    <p>Notification for Home Page. Something like: Go Poopie. Find nearby bathrooms! Click Big Button to Go!</p>
+                    <p className = "text-center">Notification for Home Page. Something like: Go Poopie. Find nearby bathrooms! Click Big Button to Go!</p>
                 </Alert>
                 <BigButton/>
             </div>
