@@ -2,31 +2,35 @@
     margin: 20px;
   }
   
-  .form input {
+#intro {
+  color: #8C6239;
+}
+
+input.form-control::placeholder {
+  color: #8C6239;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.form input {
     display: block;
     margin-top: 5px;
     margin-bottom: 5px;
     width: 100%;
-  }
+}
   
-
-  .formcontainer{
-      margin: 25px auto;
-      width: 900px;
-  }
-
-  .content{
+.content{
     position: relative;    
-      width: 25px;
-      height: 50px;
-      margin: 0 auto;
-      padding: 25px 0 0;
-      background: #f9f9f9;
-      text-align: center;
-      box-shadow: 0 1pz 0 rgb(255, 255, 255) inset;
-      padding: 25px 0 0;
-      border:2px solid #c4c6ca;
+    width: 25px;
+    height: 50px;
+    margin: 0 auto;
+    padding: 25px 0 0;
+    background: #f9f9f9;
+    text-align: center;
+    box-shadow: 0 1pz 0 rgb(255, 255, 255) inset;
+    padding: 25px 0 0;
+    border:2px solid #c4c6ca;
 
-  }
-
-  
+}

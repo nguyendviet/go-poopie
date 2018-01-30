@@ -6,8 +6,11 @@ class GMap extends Component {
     constructor(props) {
         super(props);
 
+        this.handleMarkerClick = this.handleMarkerClick.bind(this);
+
         this.state = {
             isMarkerShown: true,
+            thisId: '',
             pos: {
                 lat: 0,
                 lng: 0
@@ -32,8 +35,12 @@ class GMap extends Component {
     }
 
     // handle click on marker
-    handleMarkerClick = () => {
+    handleMarkerClick = id => {
         console.log(`marker clicked!`);
+        console.log(id);
+        this.setState({
+            thisId: id
+        })
     }
 
     render() {
@@ -43,7 +50,8 @@ class GMap extends Component {
                     pos={this.state.pos}
                     bathrooms={this.props.bathrooms}
                     isMarkerShown={this.state.isMarkerShown}
-                    onMarkerClick={this.handleMarkerClick}
+                    handleMarkerClick={this.handleMarkerClick}
+                    thisId={this.state.thisId}
                 />
             )
         }

@@ -1,9 +1,9 @@
 import React from 'react';
 import './Alert.css'
 
-const Alert = props =>
-    <div className="alert alert-info" role="alert">
-        {props.children}
+const Alert = ({type, custom, children}) =>
+    <div className={type ? `alert mt-3 alert-${type} ${custom}` : `alert alert-info ${custom}`} role="alert">
+        {children}
     </div>
 ;
 
