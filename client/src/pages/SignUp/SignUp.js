@@ -46,34 +46,38 @@ class SignUp extends Component {
     render() {
       // Notice how each input has a `value`, `name`, and `onChange` prop
       return (
-        <div className = "formcontainer">
-          <p id = "intro">
-            Sign up for My-Poopie! {this.state.firstName} {this.state.lastName}
-          </p>
-          <form className="form">
-            <input className = "form-control"
-              value={this.state.firstName}
-              name="firstName"
-              onChange={this.handleInputChange}
-              type="text"
-              placeholder="First Name"
-            />
-             <input className = "form-control"
-              value={this.state.lastName}
-              name="lastName"
-              onChange={this.handleInputChange}
-              type="text"
-              placeholder="Last Name"
-            />
-            <input className = "form-control"
-              value={this.state.password}
-              name="password"
-              onChange={this.handleInputChange}
-              type="password"
-              placeholder="Password" 
-            />
-            <button className = "btn-primary"  onClick={this.handleFormSubmit}>SignUp</button>
-          </form>
+        <div className = "container-fluid">
+          <div className="row">
+            <h3 id = "intro" className = "display-4 text-center col-sm-12 mt-3 bold">
+              Let us know who you are! {this.state.firstName} {this.state.lastName}
+            </h3>
+            <div class="col-sm-12">
+              <form className = "form">
+                <input className = "form-control-lg mb-2"
+                  value={this.state.firstName}
+                  name="firstName"
+                  onChange={this.handleInputChange}
+                  type="text"
+                  placeholder="First Name"
+                />
+                 <input className = "form-control-lg mb-2"
+                  value={this.state.lastName}
+                  name="lastName"
+                  onChange={this.handleInputChange}
+                  type="text"
+                  placeholder="Last Name"
+                />
+                <input className = "form-control-lg mb-2"
+                  value={this.state.password}
+                  name="password"
+                  onChange={this.handleInputChange}
+                  type="password"
+                  placeholder="Password" 
+                />
+                <button className = "btn btn-primary btn-block btn-lg mt-3"  onClick={this.handleFormSubmit}>SignUp</button>
+              </form>
+            </div>
+          </div>
         </div>  
   );
 }

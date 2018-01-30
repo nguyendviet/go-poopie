@@ -2,6 +2,16 @@
     margin: 20px;
   }
   
+#intro {
+  color: #8C6239;
+}
+input.form-control::placeholder {
+  color: #8C6239;
+}
+.bold {
+  font-weight: 600;
+}
+
   .form input {
     display: block;
     margin-top: 5px;

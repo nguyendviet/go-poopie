@@ -5,8 +5,9 @@ import './BigButton.css'
 const BigButton = () =>
     <div className="lightgray-outer">
         <div className="gray-outer">
-            <div className="outer-red">
+        <div className="outer-red">
                 <div className="red-prime">
+                <div className="highlight"></div>
                     <Link to="/map">
                     <button type="button" className="btn  btn-lg btn-round">Go!</button></Link>
                 </div>
