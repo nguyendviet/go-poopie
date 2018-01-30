@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-var mongoose = require('mongoose');
 var UserSchema = new mongoose.Schema({
   _id: {
     type: String,
