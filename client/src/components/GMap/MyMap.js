@@ -18,21 +18,19 @@ const MyMap = compose(
         defaultZoom={15}
         defaultCenter={props.pos}
     >
-        {/* {props.isMarkerShown && <Marker position={props.pos} onClick={props.onMarkerClick} />} */}
-        {props.isMarkerShown && <Marker position={props.pos} onClick={props.onToggleOpen} />}
+        {props.isMarkerShown && <Marker position={props.pos} onClick={props.handleMarkerClick} />}
         {props.bathrooms.map(bathroom => 
             <Marker 
                 id={bathroom._id}
                 key={bathroom._id} 
                 position={bathroom.location.coordinates} 
-                // onClick={props.onMarkerClick}
-                onClick={props.onToggleOpen}
+                onClick={props.handleMarkerClick.bind(this, bathroom._id)}
                 icon={bathroom_icon}
             >
-                {props.isOpen && <InfoWindow>
+            {props.thisId === bathroom._id && <InfoWindow>
                     <div>
-                    <p>Id: {bathroom._id}</p>
-                    <p>Direction: {bathroom.name}</p>
+                        <p>Id: {bathroom._id}</p>
+                        <p>Direction: {bathroom.name}</p>
                     </div>
                 </InfoWindow>}
             </Marker>
