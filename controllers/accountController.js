@@ -1,3 +1,7 @@
+//creates a constructor that requires the crypto module - to provide
+//cryptographic functionality, node-uuid module to construct universal
+//unique identifiers in order to reset passwords, and api-responses/apiMessages
+//to provide feedback.
 var AccountController = function(userModel, session, mailer){
   this.crypto = require ('crypto');
   this.uuid = require ('node-uuid');
