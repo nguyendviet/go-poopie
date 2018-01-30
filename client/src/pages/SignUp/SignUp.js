@@ -1,84 +1,96 @@
 import React, { Component } from "react";
+import Alert from "../../components/Alert";
 import "../SignUp/signup.css";
+
 class SignUp extends Component {
     // Setting the component's initial state
     state = {
-      firstName: "",
-      lastName: "",
-      password: ""
+        name: "",
+        email: "",
+        password: "",
+        alert: "Sign up to add more bathrooms!",
+        alertType: ""
     };
   
     handleInputChange = event => {
-      // Getting the value and name of the input which triggered the change
-      let value = event.target.value;
-      const name = event.target.name;
-  
-      if (name === "password") {
-        value = value.substring(0, 15);
-      }
-      // Updating the input's state
-      this.setState({
-        [name]: value
-      });
+        // Getting the value and name of the input which triggered the change
+        let value = event.target.value;
+        const name = event.target.name;
+    
+        if (name === "password") {
+            value = value.substring(0, 15);
+        }
+        // Updating the input's state
+        this.setState({
+            [name]: value
+        });
     };
   
     handleFormSubmit = event => {
-      // Preventing the default behavior of the form submit (which is to refresh the page)
-      event.preventDefault();
-      if (!this.state.firstName || !this.state.lastName) {
-        alert("Fill out your first and last name please!");
-      } else if (this.state.password.length < 6) {
-        alert(
-          `Choose a more secure password ${this.state.firstName} ${this.state
-            .lastName}`
-        );
-      } else {
-        console.log(`Hello ${this.state.firstName} ${this.state.lastName}`);
-      }
-  
-      this.setState({
-        firstName: "",
-        lastName: "",
-        password: ""
-      });
+        // Preventing the default behavior of the form submit (which is to refresh the page)
+        event.preventDefault();
+        
+        if (!this.state.name || !this.state.email || !this.state.password) {
+            this.setState({
+                alert: "All fields are required!",
+                alertType: "danger"
+            });
+        } 
+        else if (this.state.password.length < 6) {
+            this.setState({
+                alert: `Choose a more secure password ${this.state.name}!`,
+                alertType: "warning"
+            });
+        } 
+        else {
+            this.setState({
+                alert: `Hello  ${this.state.name}!`,
+                alertType: "success"
+            });
+        }
+
+        this.setState({
+            name: "",
+            email: "",
+            password: ""
+        });
     };
   
     render() {
-      // Notice how each input has a `value`, `name`, and `onChange` prop
-      return (
-        <div className = "formcontainer">
-          <p id = "intro">
-            Sign up for My-Poopie! {this.state.firstName} {this.state.lastName}
-          </p>
-          <form className="form">
-            <input className = "form-control"
-              value={this.state.firstName}
-              name="firstName"
-              onChange={this.handleInputChange}
-              type="text"
-              placeholder="First Name"
-            />
-             <input className = "form-control"
-              value={this.state.lastName}
-              name="lastName"
-              onChange={this.handleInputChange}
-              type="text"
-              placeholder="Last Name"
-            />
-            <input className = "form-control"
-              value={this.state.password}
-              name="password"
-              onChange={this.handleInputChange}
-              type="password"
-              placeholder="Password" 
-            />
-            <button className = "btn-primary"  onClick={this.handleFormSubmit}>SignUp</button>
-          </form>
-        </div>  
-  );
+        return (
+            <div>
+                <Alert type={this.state.alertType}>
+                    {this.state.alert}
+                </Alert>
+                <div className = "formcontainer">
+                    <form className="form">
+                    <input className = "form-control"
+                        value={this.state.name}
+                        name="name"
+                        onChange={this.handleInputChange}
+                        type="text"
+                        placeholder="Name"
+                    />
+                        <input className = "form-control"
+                        value={this.state.email}
+                        name="email"
+                        onChange={this.handleInputChange}
+                        type="email"
+                        placeholder="Email"
+                    />
+                    <input className = "form-control"
+                        value={this.state.password}
+                        name="password"
+                        onChange={this.handleInputChange}
+                        type="password"
+                        placeholder="Password" 
+                    />
+                    <button className = "btn-primary"  onClick={this.handleFormSubmit}>SignUp</button>
+                    </form>
+                </div>
+            </div>
+        );
+    }
 }
-}
-  
-    
 
 export default SignUp;

@@ -11,7 +11,9 @@ import NavBar from './components/NavBar';
 const App = () =>
 <Router>
     <div>
-        <NavBar loggedIn={false}/>
+        {/* might need to change the way navbar takes condition */}
+        {/* <NavBar loggedIn={false}/> */}
+        <NavBar/>
         <Switch>
             <Route exact path="/" component={Home}/>
             <Route exact path="/map" component={Map}/>
