@@ -61,9 +61,11 @@ class SignUp extends Component {
             <div>
                 <div className = "container-fluid">
                     <div className="row">
-                        <Alert type={this.state.alertType} custom="display-4 text-center col-sm-12 mt-3 bold">
-                            {this.state.alert}
-                        </Alert>
+                        <div class="col-sm-12">
+                            <Alert type={this.state.alertType} custom="display-4 text-center mt-3 bold">
+                                {this.state.alert}
+                            </Alert>
+                        </div>
                         <div className = "col-sm-12">
                             <form className="form">
                                 <input className = "form-control-lg mb-2"

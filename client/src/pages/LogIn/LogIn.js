@@ -37,34 +37,38 @@ class LogIn extends Component {
 
     render() {
         return (
-            <div>
-                <Alert type={this.state.alertType}>
-                    {this.state.alert}
-                </Alert>
-                <div className = "formcontainer">
-                    <form className="form">
-                        <input 
-                            className = "form-control"
-                            value={this.state.email}
-                            name="email"
-                            onChange={this.handleInputChange}
-                            type="email"
-                            placeholder="Email"
-                        />
-                        <input 
-                            className = "form-control"
-                            value={this.state.password}
-                            name="password"
-                            onChange={this.handleInputChange}
-                            type="password"
-                            placeholder="Password"
-                        />
-                        <button 
-                            className = "btn-primary" 
-                            onClick={this.handleFormSubmit}
-                        >Login
-                        </button>
-                    </form>
+            <div className = "container-fluid">
+                <div className="row">
+                    <div className = "col-sm-12">
+                        <Alert type={this.state.alertType} custom="display-4 text-center mt-3 bold">
+                            {this.state.alert} 
+                        </Alert>
+                    </div>
+                    <div className = "col-sm-12">
+                        <form className="form">
+                            <input 
+                                 className = "form-control-lg mb-2"
+                                value={this.state.email}
+                                name="email"
+                                onChange={this.handleInputChange}
+                                type="email"
+                                placeholder="Email"
+                            />
+                            <input 
+                                 className = "form-control-lg mb-2"
+                                value={this.state.password}
+                                name="password"
+                                onChange={this.handleInputChange}
+                                type="password"
+                                placeholder="Password"
+                            />
+                            <button 
+                                className = "btn btn-primary btn-block btn-lg mt-3" 
+                                onClick={this.handleFormSubmit}
+                            >Login
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         );
