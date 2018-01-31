@@ -8,7 +8,7 @@ class SignUp extends Component {
         name: "",
         email: "",
         password: "",
-        alert: "Let us know who you are!",
+        alert: "Let us know who you are",
         alertType: ""
     };
   
