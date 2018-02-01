@@ -64,14 +64,13 @@ class AddBathroom extends Component {
                 <Alert>
                     {this.state.alert}
                 </Alert>
-                <button className = "btn btn-primary btn-brown btn-lg mt-3" onClick={this.toggleCoords.bind(this)}>Toggle Methods</button>
                 <Form
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
                     coords={this.state.coords}
                 />
                 <h2>OR</h2>
-                <button onClick={this.toggleCoords.bind(this)}>{this.state.coords ? `Use Current Location` : `Use Specific Coordinates`}</button>
+                <button  className = "btn btn-primary btn-brown btn-lg mt-3"  onClick={this.toggleCoords.bind(this)}>{this.state.coords ? `Use Current Location` : `Use Specific Coordinates`}</button>
             </div>
         )
     }
