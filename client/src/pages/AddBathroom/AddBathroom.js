@@ -8,6 +8,7 @@ class AddBathroom extends Component {
         super(props);
 
         this.state = {
+            alert: ['Add a bathroom'],
             name: '',
             coords: false,
             lat: 0,
@@ -61,9 +62,9 @@ class AddBathroom extends Component {
         return (
             <div>
                 <Alert>
-                    <p>Add a bathroom</p>
+                    {this.state.alert}
                 </Alert>
-                <button onClick={this.toggleCoords.bind(this)}>Toggle Methods</button>
+                <button className = "btn btn-primary btn-brown btn-lg mt-3" onClick={this.toggleCoords.bind(this)}>Toggle Methods</button>
                 <Form
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}

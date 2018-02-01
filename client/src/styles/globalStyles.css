@@ -4,7 +4,13 @@
 }
 .btn-brown {
     background-color: #563B1B;
+    border-color: #563B1B;
     color: #FFFACD;
+}
+.btn-brown:hover {
+    background-color: #EF9B0F;
+    border-color: #563B1B;
+    color: #563B1B;
 }
 .font-xlg {
     font-size: x-large;

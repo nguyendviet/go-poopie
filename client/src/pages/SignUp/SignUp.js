@@ -10,9 +10,9 @@ class SignUp extends Component {
         name: "",
         email: "",
         password: "",
-        alert: "Who are you? (If you wanna go, we've got to know!)",
+        alert: ["Who are you?", "(If you wanna go, we've got to know)"],
         alertType: ""
-    };
+    }
   
     handleInputChange = event => {
         // Getting the value and name of the input which triggered the change
@@ -34,7 +34,7 @@ class SignUp extends Component {
         
         if (!this.state.name || !this.state.email || !this.state.password) {
             this.setState({
-                alert: "All fields are required!",
+                alert: ["All fields are required!"],
                 alertType: "danger"
             });
         } 
