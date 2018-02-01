@@ -70,6 +70,7 @@ class AddBathroom extends Component {
                     handleFormSubmit={this.handleFormSubmit}
                     coords={this.state.coords}
                 />
+                <h2>OR</h2>
                 <button onClick={this.toggleCoords.bind(this)}>{this.state.coords ? `Use Current Location` : `Use Specific Coordinates`}</button>
             </div>
         )
