@@ -62,13 +62,13 @@ class SignUp extends Component {
         return (
             <div>
                 <div className = "container-fluid">
-                    <div className="row">
-                        <div class="col-sm-12">
+                    <div className="row justify-content-center">
+                        <div className="col-sm-12 col-lg-8">
                             <Alert type={this.state.alertType} custom="font-xlg text-center mt-3 bold yellowAlert bold text">
                                 {this.state.alert}
                             </Alert>
                         </div>
-                        <div className = "col-sm-12">
+                        <div className = "col-sm-12 col-lg-8">
                             <form className="form">
                                 <input className = "form-control-lg mb-2"
                                     value={this.state.name}
