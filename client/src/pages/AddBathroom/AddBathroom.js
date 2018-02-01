@@ -9,6 +9,8 @@ class AddBathroom extends Component {
 
         this.state = {
             name: '',
+            alert: `Please share your favourite bathrooms with other "goers" by adding to our database.`,
+            alertType: 'info',
             coords: false,
             lat: 0,
             lng: 0
@@ -54,14 +56,19 @@ class AddBathroom extends Component {
 
         API
         .saveBathroom(bathroom)
-        .then(res => console.log(res.data));
+        .then(res => {
+            this.setState({
+                alert: `New bathroom has been successfully added!`,
+                alertType: 'success'
+            })
+        });
     };
 
     render() {
         return (
             <div>
-                <Alert>
-                    <p>Add a bathroom</p>
+                <Alert type={this.state.alertType} custom="font-xlg text-center mt-3 bold bold text">
+                    {this.state.alert}
                 </Alert>
                 <Form
                     handleInputChange={this.handleInputChange}
