@@ -1,6 +1,19 @@
 import React, {Component} from 'react';
 import Alert from '../../components/Alert';
 import BigButton from '../../components/BigButton';
+import '../../styles/globalStyles.css'
+import logo from '../../images/full-logo.png'
+
+
+const logoStyle = {
+    height: 76,
+    width: 76,
+    textAlign: 'center',
+    justifyContent: 'center',
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+}
 
 class Home extends Component {
     state = {
@@ -9,8 +22,9 @@ class Home extends Component {
     render() {
         return (
             <div className = "col-sm-12">
-                <Alert type="success" custom="foo">
-                    <p className = "text-center">Notification for Home Page. Something like: Go Poopie. Find nearby bathrooms! Click Big Button to Go!</p>
+                <Alert type="success" custom="yellowAlert">
+                <img src={logo} alt="logo" style={logoStyle} className='logo mb-4' />
+                    <h3 className = 'text-center bold text'>IF IT'S TIME TO GO, PRESS GO!</h3>
                 </Alert>
                 <BigButton/>
             </div>

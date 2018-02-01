@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Alert from "../../components/Alert";
+import '../../styles/globalStyles.css';
 import "../SignUp/signup.css";
+
 
 class SignUp extends Component {
     // Setting the component's initial state
@@ -8,7 +10,7 @@ class SignUp extends Component {
         name: "",
         email: "",
         password: "",
-        alert: "Let us know who you are",
+        alert: "Who are you? (If you wanna go, we've got to know!)",
         alertType: ""
     };
   
@@ -62,7 +64,7 @@ class SignUp extends Component {
                 <div className = "container-fluid">
                     <div className="row">
                         <div class="col-sm-12">
-                            <Alert type={this.state.alertType} custom="display-4 text-center mt-3 bold">
+                            <Alert type={this.state.alertType} custom="font-xlg text-center mt-3 bold yellowAlert bold text">
                                 {this.state.alert}
                             </Alert>
                         </div>
@@ -90,7 +92,7 @@ class SignUp extends Component {
                                     placeholder="Password" 
                                 />
                                 <button 
-                                    className = "btn btn-primary btn-block btn-lg mt-3"
+                                    className = "btn btn-brown btn-block btn-lg mt-3"
                                     onClick={this.handleFormSubmit}
                                 >SignUp
                                 </button>

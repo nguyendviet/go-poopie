@@ -1,0 +1,18 @@
+.yellowAlert {
+    background-color: #FFFACD;
+    border: 2px solid #EF9B0F;
+}
+.btn-brown {
+    background-color: #563B1B;
+    color: #FFFACD;
+}
+.font-xlg {
+    font-size: x-large;
+}
+.bold {
+    font-weight: 600;
+}
+
+.text {
+    color:#563B1B;
+}
