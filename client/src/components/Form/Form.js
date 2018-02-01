@@ -17,7 +17,6 @@ const Form = props => (
             {props.coords 
                 ? (
                     <div>
-                        <p>Submit using specific coordinates</p>
                         <h4>
                             <strong>Lat</strong>
                         </h4>
@@ -40,6 +39,7 @@ const Form = props => (
                             onChange={props.handleInputChange}
                             required
                         />
+                        <p>Submit using specific coordinates</p>
                     </div>
                 ) 
                 : ('Submit using current location.')

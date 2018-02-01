@@ -63,12 +63,12 @@ class AddBathroom extends Component {
                 <Alert>
                     <p>Add a bathroom</p>
                 </Alert>
-                <button onClick={this.toggleCoords.bind(this)}>Toggle Methods</button>
                 <Form
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
                     coords={this.state.coords}
                 />
+                <button onClick={this.toggleCoords.bind(this)}>{this.state.coords ? `Use Current Location` : `Use Specific Coordinates`}</button>
             </div>
         )
     }

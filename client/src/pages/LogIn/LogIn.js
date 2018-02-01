@@ -38,13 +38,13 @@ class LogIn extends Component {
     render() {
         return (
             <div className = "container-fluid">
-                <div className="row">
-                    <div className = "col-sm-12">
+                <div className="row justify-content-center">
+                    <div className = "col-sm-12 col-lg-8">
                         <Alert type={this.state.alertType} custom="display-4 text-center mt-3 bold">
                             {this.state.alert} 
                         </Alert>
                     </div>
-                    <div className = "col-sm-12">
+                    <div className = "col-sm-12 col-lg-8">
                         <form className="form">
                             <input 
                                  className = "form-control-lg mb-2"
