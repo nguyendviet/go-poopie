@@ -77,11 +77,7 @@ class AddBathroom extends Component {
     render() {
         return (
             <div>
-<<<<<<< HEAD
-                <Alert>
-=======
                 <Alert type={this.state.alertType} custom="font-xlg text-center mt-3 bold bold text">
->>>>>>> master
                     {this.state.alert}
                 </Alert>
                 <Form
