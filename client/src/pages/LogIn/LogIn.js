@@ -6,7 +6,7 @@ class LogIn extends Component {
     state = {
         email: "",
         password: "",
-        alert: ["Log in if you already have an account."],
+        alert: "Log in if you already have an account.",
         alertType: ""
     };
 
@@ -24,22 +24,17 @@ class LogIn extends Component {
         // Preventing the default behavior of the form submit (which is to refresh the page)
         event.preventDefault();
 
-        // API
-        // .login(this.state.email)
-        // .then(res => {
-        //     console.log()
-        // });
         API.login(this.state.email)
             .then(res => {
                 this.setState({
-                    alert: [`Logged in with email ${this.state.email}`],
+                    alert: `Welcome back ${res.data.name}!`,
                     alertType: "success"
                 });
                 console.log(res.data)
             })
             .catch(err => {
                 this.setState({
-                    alert: [`User Not Found' ${this.state.email}`],
+                    alert: `User Not Found!`,
                     alertType: "success"
                 });
 
@@ -49,8 +44,8 @@ class LogIn extends Component {
 
 
         this.setState({
-            firstName: "",
-            lastName: ""
+            email: "",
+            password: ""
         });
     };
 

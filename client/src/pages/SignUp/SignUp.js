@@ -51,18 +51,19 @@ class SignUp extends Component {
         } 
         else {
              let user = {
-                firstName:this.state.name.split(' ')[0],
-                lastName:this.state.name.split(' ')[1],
-                "email": this.state.email
+                "name": this.state.name,
+                "email": this.state.email,
+                "password": this.state.password
               }
               console.warn(user);
               API.saveUser(user)
               .then(res => {
-                //   this.setState({
-                //       alert: [`Thanks for Pooping, We Welcome You! ${this.state.email}`],
-                //       alertType: "success"
-                //   });
-                  console.log(res.data)
+                  console.log(res);
+
+                  this.setState({
+                      alert: [`Thanks for Pooping, We Welcome You! ${res.data.name}`],
+                      alertType: "success"
+                  });
               })
               .catch(err => {
                   this.setState({
