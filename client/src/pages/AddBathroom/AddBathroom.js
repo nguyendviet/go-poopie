@@ -57,10 +57,19 @@ class AddBathroom extends Component {
         API
         .saveBathroom(bathroom)
         .then(res => {
-            this.setState({
-                alert: `New bathroom has been successfully added!`,
-                alertType: 'success'
-            })
+
+            if (res.status == 200) {
+                this.setState({
+                    alert: `New bathroom has been successfully added!`,
+                    alertType: 'success'
+                })
+            }
+            else {
+                this.setState({
+                    alert: `Failed to add bathroom. Please try again.`,
+                    alertType: 'warning'
+                })
+            }
         });
     };
 
