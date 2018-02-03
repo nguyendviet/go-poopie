@@ -10,7 +10,7 @@ class AddBathroom extends Component {
         this.state = {
             alert: ['Add a bathroom'],
             name: '',
-            alert: `Please share your favourite bathrooms with other "goers" by adding to our database.`,
+            alert: `Please share your favorite bathrooms with other "goers" by adding to our database.`,
             alertType: 'info',
             coords: false,
             lat: 0,
