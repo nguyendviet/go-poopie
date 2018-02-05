@@ -51,36 +51,35 @@ class SignUp extends Component {
             });
         } 
         else {
-             let user = {
+            let user = {
                 "name": this.state.name,
                 "email": this.state.email,
                 "password": this.state.password
-              }
-              console.warn(user);
-              API.saveUser(user)
-              .then(res => {
-                  console.log(res);
-
-                  this.setState({
-                      alert: [`Thanks for Pooping, We Welcome You! ${res.data.name}`],
-                      alertType: "success"
-                  });
-              })
-              .catch(err => {
-                  this.setState({
-                      alert: [`User Already Exists' ${this.state.email}`],
-                      alertType: "success"
-                  });
-  
-              })
+            }
+            console.warn(user);
             
-        this.setState({
-            name: "",
-            email: "",
-            password: ""
-        });
-        
-    }
+            API.saveUser(user)
+            .then(res => {
+                console.log(res);
+
+                this.setState({
+                    alert: `Thanks for Pooping, We Welcome You! ${res.data.name}`,
+                    alertType: "success"
+                });
+            })
+            .catch(err => {
+                this.setState({
+                    alert: `User Already Exists' ${this.state.email}`,
+                    alertType: "success"
+                });
+            });
+            
+            this.setState({
+                name: "",
+                email: "",
+                password: ""
+            });
+        }
     };
   
     render() {
