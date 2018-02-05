@@ -5,7 +5,7 @@ class LogIn extends Component {
     state = {
         email: "",
         password: "",
-        alert: ["Log in if you already have an account."],
+        alert: "Log in if you already have an account.",
         alertType: ""
     };
     
@@ -25,7 +25,7 @@ class LogIn extends Component {
 
         // this will show if server responses with status 200, and user's name. right now just leave it here
         this.setState({
-            alert: [`Logged in with email ${this.state.email}`],
+            alert: `Logged in with email ${this.state.email}`,
             alertType: "success"
         });
 

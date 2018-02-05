@@ -45,7 +45,7 @@ const Form = props => (
                 : ('Submit using current location.')
             }
         </div>
-        <div className="pull-right">
+        {/* <div className="pull-right">
             <button
                 onClick={props.handleFormSubmit}
                 type="submit"
@@ -53,7 +53,7 @@ const Form = props => (
             >
                 Submit
             </button>
-        </div>
+        </div> */}
     </form>
 );
 

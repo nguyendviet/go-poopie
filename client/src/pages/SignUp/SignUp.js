@@ -10,7 +10,8 @@ class SignUp extends Component {
         name: "",
         email: "",
         password: "",
-        alert: ["Who are you?", "(If you wanna go, we've got to know)"],
+        alert: "Who are you? (If you wanna go, we've got to know)",
+        alert2: "foobar",
         alertType: ""
     }
   
@@ -34,7 +35,7 @@ class SignUp extends Component {
         
         if (!this.state.name || !this.state.email || !this.state.password) {
             this.setState({
-                alert: ["All fields are required!"],
+                alert: "All fields are required!",
                 alertType: "danger"
             });
         } 
@@ -65,7 +66,8 @@ class SignUp extends Component {
                     <div className="row justify-content-center">
                         <div className="col-sm-12 col-lg-8">
                             <Alert type={this.state.alertType} custom="font-xlg text-center mt-3 bold yellowAlert bold text">
-                                {this.state.alert}
+                                <p>{this.state.alert}</p>
+                                <p>{this.state.alert2}</p>
                             </Alert>
                         </div>
                         <div className = "col-sm-12 col-lg-8">

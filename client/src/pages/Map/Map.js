@@ -35,12 +35,16 @@ class Map extends Component {
 
     render() {
         return (
-            <div>
-                <Alert>
-                    <p>Notification for Map Page: Locations of all nearby bathrooms:</p>
-                </Alert>
-                <p>This is where we show the map.</p>
-                <GMap bathrooms={this.state.bathrooms}/>
+            <div className = "container-fluid">
+                <div className="row justify-content-center">
+                    <div className = "col-sm-12 col-lg-8">
+                        <Alert type="success" custom="yellowAlert">
+                            <p>Notification for Map Page: Locations of all nearby bathrooms:</p>
+                        </Alert>
+                        <p>This is where we show the map.</p>
+                        <GMap bathrooms={this.state.bathrooms}/>
+                    </div>
+                </div>
             </div>
         )
     }
