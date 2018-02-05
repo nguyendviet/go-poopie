@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Alert from "../../components/Alert";
 import '../../styles/globalStyles.css';
 import "../SignUp/signup.css";
+import API from '../../utils/API';
+import {browserHistory} from 'react-router'
 
 
 class SignUp extends Component {
@@ -30,8 +32,11 @@ class SignUp extends Component {
     };
   
     handleFormSubmit = event => {
-        // Preventing the default behavior of the form submit (which is to refresh the page)
         event.preventDefault();
+    
+    //prevent default
+       // this.context.router.history.push('/map')
+        //Preventing the default behavior of the form submit (which is to refresh the page)
         
         if (!this.state.name || !this.state.email || !this.state.password) {
             this.setState({
@@ -46,17 +51,36 @@ class SignUp extends Component {
             });
         } 
         else {
-            this.setState({
-                alert: `Hello  ${this.state.name}!`,
-                alertType: "success"
-            });
-        }
+             let user = {
+                "name": this.state.name,
+                "email": this.state.email,
+                "password": this.state.password
+              }
+              console.warn(user);
+              API.saveUser(user)
+              .then(res => {
+                  console.log(res);
 
+                  this.setState({
+                      alert: [`Thanks for Pooping, We Welcome You! ${res.data.name}`],
+                      alertType: "success"
+                  });
+              })
+              .catch(err => {
+                  this.setState({
+                      alert: [`User Already Exists' ${this.state.email}`],
+                      alertType: "success"
+                  });
+  
+              })
+            
         this.setState({
             name: "",
             email: "",
             password: ""
         });
+        
+    }
     };
   
     render() {
