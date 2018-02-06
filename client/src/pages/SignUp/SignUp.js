@@ -3,8 +3,6 @@ import Alert from "../../components/Alert";
 import '../../styles/globalStyles.css';
 import "../SignUp/signup.css";
 import API from '../../utils/API';
-import {browserHistory} from 'react-router'
-
 
 class SignUp extends Component {
     // Setting the component's initial state

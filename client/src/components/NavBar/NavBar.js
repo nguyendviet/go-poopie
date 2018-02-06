@@ -20,7 +20,7 @@ class NavBar extends Component {
             this.state.loggedIn
             ? (
                 <ul className="nav">
-                    <li><img></img></li>
+                    <li><img alt="logo"></img></li>
                     <li className="nav-item">
                         <Link to="/" className="nav-link">Home</Link>
                     </li>
@@ -31,7 +31,7 @@ class NavBar extends Component {
             )
             : (
                 <ul className="nav">
-                    <li><img></img></li>
+                    <li><img alt="logo"></img></li>
                     <li className="nav-item">
                         <Link to="/" className="nav-link">Home</Link>
                     </li>

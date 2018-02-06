@@ -8,7 +8,6 @@ class AddBathroom extends Component {
         super(props);
 
         this.state = {
-            alert: ['Add a bathroom'],
             name: '',
             alert: `Please share your favorite bathrooms with other "goers" by adding to our database.`,
             alertType: 'info',
@@ -59,7 +58,7 @@ class AddBathroom extends Component {
         .saveBathroom(bathroom)
         .then(res => {
 
-            if (res.status == 200) {
+            if (res.status === 200) {
                 this.setState({
                     alert: `New bathroom has been successfully added!`,
                     alertType: 'success'
