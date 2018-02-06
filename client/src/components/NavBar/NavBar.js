@@ -56,7 +56,7 @@ class NavBar extends Component {
         return (
             this.state.loggedIn
             ? (
-                <ul className="nav">
+                <ul className="nav" style={navStyle}>
                     <li style={navItemStyle} className="nav-item">
                         <Link to="/" className="nav-link" style={navLinkStyle}><img src={logo} alt="logo" style={logoStyle} className='logo' /></Link>
                     </li>
@@ -66,7 +66,7 @@ class NavBar extends Component {
                 </ul>
             )
             : (
-                <ul className="nav">
+                <ul className="nav" style={navStyle}>
                     <li style={navItemStyle} className="nav-item">
                         <Link to="/" className="nav-link" style={navLinkStyle}><img src={logo} alt="logo" style={logoStyle} className='logo' /></Link>
                     </li>
