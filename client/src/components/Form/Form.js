@@ -2,44 +2,51 @@ import React from 'react';
 
 const Form = props => (
     <form>
-        <div className="form-group">
-            <h4>
-                <strong>Name / Direction</strong>
-            </h4>
-            <input
-                className="form-control"
-                type="text"
-                value={props.name}
-                name="name"
-                onChange={props.handleInputChange}
-                required
-            />
+        <div className="form">
+            <div class="form-group">
+                <h5 class="text">
+                    <strong>Description</strong>
+                </h5>
+                <input
+                    className="form-control"
+                    type="text"
+                    value={props.name}
+                    placeholder='Add a helpful note'
+                    name="name"
+                    onChange={props.handleInputChange}
+                    required
+                />
+            </div>
             {props.coords 
                 ? (
                     <div>
-                        <h4>
-                            <strong>Lat</strong>
-                        </h4>
-                        <input
-                            className="form-control"
-                            type="number"
-                            value={props.lat}
-                            name="lat"
-                            onChange={props.handleInputChange}
-                            required
-                        />
-                        <h4>
-                            <strong>Lng</strong>
-                        </h4>
-                        <input
-                            className="form-control"
-                            type="number"
-                            value={props.lng}
-                            name="lng"
-                            onChange={props.handleInputChange}
-                            required
-                        />
-                        <p>Submit using specific coordinates</p>
+                        <div class="form-group">
+                            <h5 class="text">
+                                <strong>Latitude</strong>
+                            </h5>
+                            <input
+                                className="form-control"
+                                type="number"
+                                value={props.lat}
+                                name="lat"
+                                onChange={props.handleInputChange}
+                                required
+                            />
+                        </div>
+                        <div class="form-group">
+                            <h5 class="text">
+                                <strong>Longitude</strong>
+                            </h5>
+                            <input
+                                className="form-control"
+                                type="number"
+                                value={props.lng}
+                                name="lng"
+                                onChange={props.handleInputChange}
+                                required
+                            />
+                            <p>Submit using specific coordinates</p>
+                        </div>
                     </div>
                 ) 
                 : ('Submit using current location.')

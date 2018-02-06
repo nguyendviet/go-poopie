@@ -22,3 +22,14 @@
 .text {
     color:#563B1B;
 }
+.left {
+    float:left;
+}
+.clear {
+    clear: both;
+}
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

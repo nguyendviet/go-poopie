@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Alert from '../../components/Alert';
 import Form from '../../components/Form';
 import API from '../../utils/API';
+import './AddBathroom.css'
 import '../../styles/globalStyles.css';
 
 class AddBathroom extends Component {
@@ -78,18 +79,26 @@ class AddBathroom extends Component {
     render() {
         return (
             <div>
-                <Alert type={this.state.alertType} custom="font-xlg text-center mt-3 bold yellowAlert text">
-                    {this.state.alert}
-                </Alert>
-                <Form
-                    handleInputChange={this.handleInputChange}
-                    // handleFormSubmit={this.handleFormSubmit}
-                    coords={this.state.coords}
-                />
+                <div className = "container-fluid">
+                    <div className="row justify-content-center">
+                        <div className="col-sm-12 col-lg-8">
+                            <Alert type={this.state.alertType} custom="font-xlg text-center mt-3 mb-4 bold yellowAlert text">
+                                {this.state.alert}
+                            </Alert>
+                            <Form
+                                handleInputChange={this.handleInputChange}
+                                // handleFormSubmit={this.handleFormSubmit}
+                                coords={this.state.coords}
+                            />
 
-                <button onClick={this.handleFormSubmit.bind(this)} className="btn btn-lg btn-danger">Submit</button>
-                <h2>OR</h2>
-                <button  className = "btn btn-primary btn-brown btn-lg mt-3"  onClick={this.toggleCoords.bind(this)}>{this.state.coords ? `Use Current Location` : `Use Specific Coordinates`}</button>
+                            <div class="center-block">
+                                <button onClick={this.handleFormSubmit.bind(this)} className="btn btn-danger center-block">Submit</button>
+                                <h5 class="bold text center-block">OR</h5>
+                                <button  className = "btn btn-primary btn-brown center-block"  onClick={this.toggleCoords.bind(this)}>{this.state.coords ? `Use Current Location` : `Use Specific Coordinates`}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
