@@ -37,9 +37,8 @@ class Map extends Component {
                 <div className="row justify-content-center">
                     <div className = "col-sm-12 col-lg-8">
                         <Alert type="success" custom="yellowAlert">
-                            <p>Notification for Map Page: Locations of all nearby bathrooms:</p>
+                            <p className = 'font-xlg text-center bold text'>Locations of all nearby bathrooms:</p>
                         </Alert>
-                        <p>This is where we show the map.</p>
                         <GMap bathrooms={this.state.bathrooms}/>
                     </div>
                 </div>
