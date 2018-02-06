@@ -26,9 +26,7 @@ class GMap extends Component {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
-
-                console.log(`location of user:`);
-                console.log(pos);
+                
                 this.setState({pos});
             });
         }
@@ -36,8 +34,6 @@ class GMap extends Component {
 
     // handle click on marker
     handleMarkerClick = id => {
-        console.log(`marker clicked!`);
-        console.log(id);
         this.setState({
             thisId: id
         })

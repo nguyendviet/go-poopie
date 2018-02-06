@@ -39,12 +39,14 @@ class SignUp extends Component {
         if (!this.state.name || !this.state.email || !this.state.password) {
             this.setState({
                 alert: "All fields are required!",
+                alert2: "",
                 alertType: "danger"
             });
         } 
         else if (this.state.password.length < 6) {
             this.setState({
                 alert: `Choose a more secure password ${this.state.name}!`,
+                alert2: "",
                 alertType: "warning"
             });
         } 
@@ -54,14 +56,13 @@ class SignUp extends Component {
                 "email": this.state.email,
                 "password": this.state.password
             }
-            console.warn(user);
             
             API.saveUser(user)
             .then(res => {
-                console.log(res);
 
                 this.setState({
                     alert: `Thanks for Pooping, We Welcome You! ${res.data.name}`,
+                    alert2: "",
                     alertType: "success"
                 });
 
@@ -69,8 +70,8 @@ class SignUp extends Component {
             })
             .catch(err => {
                 this.setState({
-                    alert: `User Already Exists' ${this.state.email}`,
-                    alertType: "success"
+                    alert: `User Already Exists`,
+                    alertType: "danger"
                 });
             });
             

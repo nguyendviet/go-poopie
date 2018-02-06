@@ -20,25 +20,7 @@ const logoStyle = {
     textAlign: 'center',
     justifyContent: 'center',
 }
-// const NavBar = props => {
-//     return (
-//         <ul className="nav" style={navStyle}>
-            // <li style={navItemStyle} className="nav-item">
-            //     <Link to="/" className="nav-link" style={navLinkStyle}>
-            //         <img src={logo} alt="logo" style={logoStyle} className='logo' />
-            //     </Link>
-            // </li>
-            // <li style={navItemStyle} className="nav-item">
-            //     <Link to="/signup" className="nav-link" style={navLinkStyle}>SignUp</Link>
-            // </li>
-            // <li style={navItemStyle} className="nav-item">
-            //     <Link to="/login" className="nav-link" style={navLinkStyle}>LogIn</Link>
-            // </li>
-            // <li style={navItemStyle} className="nav-item">
-            //     <Link to="/add" className="nav-link" style={navLinkStyle}>Add Bathroom</Link>
-            // </li>
-//         </ul>  
-//     )
+
 class NavBar extends Component {
     state = {
         loggedIn: false

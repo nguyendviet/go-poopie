@@ -20,8 +20,6 @@ class Map extends Component {
         API
         .getBathrooms()
         .then(res => {
-                console.log(`type of data got back from database: ${typeof(res.data)}`);
-                console.log(res.data);
                 this.setState({bathrooms: res.data});
             }
         )
