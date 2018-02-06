@@ -3,8 +3,6 @@ import Alert from "../../components/Alert";
 import '../../styles/globalStyles.css';
 import "../SignUp/signup.css";
 import API from '../../utils/API';
-import {browserHistory} from 'react-router'
-
 
 class SignUp extends Component {
     // Setting the component's initial state
@@ -66,6 +64,8 @@ class SignUp extends Component {
                     alert: `Thanks for Pooping, We Welcome You! ${res.data.name}`,
                     alertType: "success"
                 });
+
+                setTimeout(() => {window.location = '/add'; }, 1000 * 2);
             })
             .catch(err => {
                 this.setState({

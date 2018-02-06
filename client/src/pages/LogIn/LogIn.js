@@ -8,7 +8,7 @@ class LogIn extends Component {
         password: "",
         alert: "Log in if you already have an account.",
         alertType: ""
-    };
+    }
 
     handleInputChange = event => {
         // Getting the value and name of the input which triggered the change
@@ -18,7 +18,7 @@ class LogIn extends Component {
         this.setState({
             [name]: value
         });
-    };
+    }
 
     handleFormSubmit = event => {
         // Preventing the default behavior of the form submit (which is to refresh the page)
@@ -30,12 +30,13 @@ class LogIn extends Component {
                     alert: `Welcome back ${res.data.name}!`,
                     alertType: "success"
                 });
-                console.log(res.data)
+                
+                setTimeout(() => {window.location = '/add'; }, 1000 * 2);
             })
             .catch(err => {
                 this.setState({
                     alert: `User Not Found!`,
-                    alertType: "success"
+                    alertType: "danger"
                 });
 
             })
@@ -50,7 +51,7 @@ class LogIn extends Component {
             email: "",
             password: ""
         });
-    };
+    }
 
     render() {
         return (
