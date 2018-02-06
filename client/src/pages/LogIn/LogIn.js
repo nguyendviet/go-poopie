@@ -30,18 +30,18 @@ class LogIn extends Component {
                     alert: `Welcome back ${res.data.name}!`,
                     alertType: "success"
                 });
-                console.log(res.data)
+                
+                setTimeout(() => {window.location = '/add'; }, 1000 * 2);
             })
             .catch(err => {
                 this.setState({
                     alert: `User Not Found!`,
-                    alertType: "success"
+                    alertType: "danger"
                 });
 
             })
 
         // this will show if server responses with status 200, and user's name. right now just leave it here
-
 
         this.setState({
             email: "",

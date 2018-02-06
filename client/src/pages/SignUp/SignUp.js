@@ -65,6 +65,8 @@ class SignUp extends Component {
                     alert: `Thanks for Pooping, We Welcome You! ${res.data.name}`,
                     alertType: "success"
                 });
+
+                setTimeout(() => {window.location = '/add'; }, 1000 * 2);
             })
             .catch(err => {
                 this.setState({
