@@ -45,11 +45,11 @@ const Form = props => (
                                 onChange={props.handleInputChange}
                                 required
                             />
-                            <p>Submit using specific coordinates</p>
                         </div>
+                        <p className="instructionk text center"><em>Submit using specific coordinates</em></p>
                     </div>
                 ) 
-                : ('Submit using current location.')
+                : (<p className="instruction text center"><em>Submit using current location.</em></p>)
             }
         </div>
         {/* <div className="pull-right">
