@@ -10,8 +10,8 @@ class SignUp extends Component {
         name: "",
         email: "",
         password: "",
-        alert: "Who are you? (If you wanna go, we've got to know)",
-        alert2: "foobar",
+        alert: "Who are you?",
+        alert2: "(If you wanna go, we've got to know)",
         alertType: ""
     }
   

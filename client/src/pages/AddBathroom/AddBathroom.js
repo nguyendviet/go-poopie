@@ -91,9 +91,9 @@ class AddBathroom extends Component {
                                 coords={this.state.coords}
                             />
 
-                            <div class="center-block">
+                            <div className="center-block">
                                 <button onClick={this.handleFormSubmit.bind(this)} className="btn btn-danger center-block">Submit</button>
-                                <h5 class="bold text center-block">OR</h5>
+                                <h5 className="bold text center-block">OR</h5>
                                 <button  className = "btn btn-primary btn-brown center-block"  onClick={this.toggleCoords.bind(this)}>{this.state.coords ? `Use Current Location` : `Use Specific Coordinates`}</button>
                             </div>
                         </div>

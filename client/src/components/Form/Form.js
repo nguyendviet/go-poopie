@@ -3,8 +3,8 @@ import React from 'react';
 const Form = props => (
     <form>
         <div className="form">
-            <div class="form-group">
-                <h5 class="text">
+            <div className="form-group">
+                <h5 className="text">
                     <strong>Description</strong>
                 </h5>
                 <input
@@ -20,8 +20,8 @@ const Form = props => (
             {props.coords 
                 ? (
                     <div>
-                        <div class="form-group">
-                            <h5 class="text">
+                        <div className="form-group">
+                            <h5 className="text">
                                 <strong>Latitude</strong>
                             </h5>
                             <input
@@ -33,8 +33,8 @@ const Form = props => (
                                 required
                             />
                         </div>
-                        <div class="form-group">
-                            <h5 class="text">
+                        <div className="form-group">
+                            <h5 className="text">
                                 <strong>Longitude</strong>
                             </h5>
                             <input
