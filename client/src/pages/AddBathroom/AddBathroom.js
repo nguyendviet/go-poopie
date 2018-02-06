@@ -61,7 +61,7 @@ class AddBathroom extends Component {
         .saveBathroom(bathroom)
         .then(res => {
 
-            if (res.status == 200) {
+            if (res.status === 200) {
                 this.setState({
                     alert: `New bathroom has been successfully added!`,
                     alertType: 'success'
